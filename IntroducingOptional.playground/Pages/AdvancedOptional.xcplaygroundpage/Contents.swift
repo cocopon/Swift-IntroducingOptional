@@ -32,13 +32,12 @@ type(of: emptyMessage ?? "hi!")
 // これもunwrapの一種ですね
 
 
-//: ## guard文
-//: ### force unwrapの問題点
+//: ## force unwrapの危険性とその対策
 // 強制的にunwrapする場合は、nilチェックで安全確認してからにしよう…というのが、前のページのお話でした
 
 
 // 例えば、「メッセージが空でなければ表示する関数」を考えてみましょう
-func showMessage(optionalMessage: String?) {
+func showMessage(_ optionalMessage: String?) {
     if (optionalMessage == nil) {
         return
     }
@@ -47,9 +46,9 @@ func showMessage(optionalMessage: String?) {
     print(message)
 }
 
-showMessage(optionalMessage: "hello!")
+showMessage("hello!")
 // -> "hello!"
-showMessage(optionalMessage: nil)
+showMessage(nil)
 // -> (何も表示されない)
 
 
@@ -58,12 +57,35 @@ showMessage(optionalMessage: nil)
 // もっと関数が複雑になってきたとき、うっかりnilチェックを忘れたまま強制的にunwrapしてしまう…なんて危険性もあるわけです
 
 
-// そこで登場するのが「guard文」です
+// そこで活用できるのが「optional binding」や「guard文」です
+
+
+//: ### Optional Binding
+// 「optional binding」とは、if文と変数の宣言を組み合わせたものです
+// unwrapを試して、成功したときのみ実行したい処理を書くことができます
+func showMessageOptionalBinding(_ optionalMessage: String?) {
+    // Optionalな変数をunwrapしてみて…
+    if let unwrappedMessage = optionalMessage {
+        // 成功したら、unwrapされた変数 (unwrappedMessage) が使える
+        print(unwrappedMessage)
+
+        // 型をみると、unwrapされているのがわかる
+        type(of: unwrappedMessage)
+        // -> String.Type
+    }
+    
+    // unwrappedMessage はここでは使えない
+}
+
+showMessageOptionalBinding("hello!")
+// -> "hello!"
+showMessageOptionalBinding(nil)
+// -> 何も表示されない
 
 
 //: ### guard文
 // guard文を使うと、先の例と同じ処理をこのように書けます
-func showMessageGuard(optionalMessage: String?) {
+func showMessageGuard(_ optionalMessage: String?) {
     // Optionalな変数をunwrapしてみて…
     guard let unwrappedMessage = optionalMessage else {
         // だめなら (空っぽだったら) 何もせずにおしまい
@@ -79,12 +101,12 @@ func showMessageGuard(optionalMessage: String?) {
     // -> String.Type
 }
 
-showMessageGuard(optionalMessage: "hello!")
+showMessageGuard("hello!")
 // -> "hello!"
-showMessageGuard(optionalMessage: nil)
+showMessageGuard(nil)
 // -> (何も表示されない)
 
 
 // ちょっと特殊な構文で、慣れるまでに時間がかかるとは思います
-// しかし、強制的ではなく安全にunwrapできるので、先の例よりスマートです
+// しかし、強制的ではなく安全にunwrapできるので、はじめの例よりスマートです
 // 慣れてきたら積極的に使っていきたいですね
