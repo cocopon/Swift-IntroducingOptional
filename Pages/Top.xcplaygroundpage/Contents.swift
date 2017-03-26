@@ -7,11 +7,14 @@
  - [Optionalのもう少し高度な操作](AdvancedOptional)
  */
 
-/*:
- Written by [cocopon](http://cocopon.me/).
+/*
+ Author:
+ cocopon (http://cocopon.me/)
  
- Repository: [https://github.com/cocopon/swift-intro-optional](https://github.com/cocopon/swift-intro-optional)
+ Repository:
+ https://github.com/cocopon/Swift-IntroducingOptional.playground
  
- Reference:
- - [The Swift Programming Language (Swift 3.0.1 Edition)](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
+ References:
+ - The Swift Programming Language (Swift 3.0.1 Edition)
+   https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/
  */
