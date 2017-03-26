@@ -49,7 +49,7 @@ normalMessage.appending("world")
 
 //: ### 1. 不確定のまま扱う
 // １つ目は「不確定のまま扱う」方法です
-// Optionalな変数を利用する際、末尾に「?」を付加すると、不確定のまま扱うことができます
+// Optionalな変数を利用する際、末尾に「?」を付加することで、不確定のまま扱うことができます
 optionalMessage?.appending("world")
 
 
@@ -67,7 +67,7 @@ type(of: optionalMessage?.appending("world"))
 //: ### 2. 強制的にunwrapする
 // 2つ目は「強制的にunwrapする」です
 // 「force unwrap」と呼ばれる操作です
-// Optionalな変数を利用する際、末尾に「!」を付加すると、強制的に中身のあるものとして扱う、つまりunwrapすることができます
+// Optionalな変数を利用する際、末尾に「!」を付加することで、強制的に中身のあるものとして扱う、つまりunwrapすることができます
 optionalMessage!.appending("world")
 
 
@@ -76,9 +76,10 @@ type(of: optionalMessage!.appending("world"))
 // -> String.Type
 
 
-// 1点注意しなければならないのは、これがとても*危険な操作*だ、ということです
+// 1点注意しなければならないのは、これがとても **危険な操作** だ、ということです
 // 先の例ではたまたま中身が入っていたので成功しましたが、そうでない場合もあるわけです
 // 中身が空っぽなものを無理やりunwrapしようとすると、エラーで強制終了してしまいます
+// アプリでいうと、実行中に突然アプリが落ちてしまいます
 var emptyMessage: String? = nil
 //: - callout(Error): `emptyMessage!.appending("world")`
 // -> fatal error: unexpectedly found nil while unwrapping an Optional value

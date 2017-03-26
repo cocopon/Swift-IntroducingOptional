@@ -12,7 +12,7 @@
  cocopon (http://cocopon.me/)
  
  Repository:
- https://github.com/cocopon/Swift-IntroducingOptional.playground
+ https://github.com/cocopon/IntroducingOptional.playground
  
  References:
  - The Swift Programming Language (Swift 3.0.1 Edition)

@@ -13,7 +13,7 @@ var normalMessage: String = "hello!"
 // -> nilはString型を初期化できません
 
 
-// 型の末尾に「?」がついたものを、「Optional (オプショナル)」といいます
+// 型の末尾に「?」がついたものが「Optional (オプショナル)」です
 var optionalMessage: String? = "hi!"
 
 
@@ -23,7 +23,7 @@ optionalMessage = nil
 
 
 // つまり、Optionalとは
-// 値が入っているかもしれない、入っていないかもしれない…そんな曖昧な型なのです
+// 値が入っているかもしれない、入っていないかもしれない…そんな曖昧なものなのです
 
 
 //: ## Optionalの型

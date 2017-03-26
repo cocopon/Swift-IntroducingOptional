@@ -7,7 +7,7 @@ import Foundation
 
 
 //: ## 「??」演算子
-// Optionalには「??」という便利な演算子が用意されていて、こんな風に使います
+// Optionalには「??」という便利な演算子が用意されていて、このように使います
 //: - example: `(Optionalな変数) ?? (空だった場合のデフォルト値)`
 var optionalMessage: String? = "hello!"
 var emptyMessage: String? = nil
@@ -27,14 +27,14 @@ type(of: emptyMessage ?? "hi!")
 // -> String.Type
 
 
-// 値が入っていればそれを、空だったら他の値を使うわけで、「??」演算子を使うと必ず値が入ります
-// つまり、Optionalが取れるのです
+// 中身が入っていればそれを、空だったら他の値を使うということは、「??」演算子を使うと必ず中身が入ることになります
+// つまり、Optionalが外れるのです
 // これもunwrapの一種ですね
 
 
 //: ## guard文
 //: ### force unwrapの問題点
-// 強制的にunwrapする場合は、nilチェックをしたあとにしよう…という話を前のページでしましたね
+// 強制的にunwrapする場合は、nilチェックで安全確認してからにしよう…というのが、前のページのお話でした
 
 
 // 例えば、「メッセージが空でなければ表示する関数」を考えてみましょう
@@ -62,7 +62,7 @@ showMessage(optionalMessage: nil)
 
 
 //: ### guard文
-// 先の例と同じようなことを、guard文を使うとこのように書けます
+// guard文を使うと、先の例と同じ処理をこのように書けます
 func showMessageGuard(optionalMessage: String?) {
     // Optionalな変数をunwrapしてみて…
     guard let unwrappedMessage = optionalMessage else {
