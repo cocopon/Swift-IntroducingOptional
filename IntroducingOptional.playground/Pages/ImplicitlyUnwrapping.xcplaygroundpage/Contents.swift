@@ -16,12 +16,13 @@ class MyViewController: UIViewController {
 }
 
 
-// 先に説明したforce unwrapと似ているようにも見えますが…
+// 先に説明したforce unwrapとよく似ていますが…
 var optionalMessage: String? = "hello!"
 var forceUnwrappedMessage: String = optionalMessage!
 // こちらは変数名に「!」がついているのに対して
 // Outletの例では型名 UITextField に「!」がついているので
-// 見た目は似ていますが、それぞれ別のものです
+// それぞれ別のものです
+// 見た目はよく似ているんですけどね
 
 
 //: ## 暗黙的なunwrap
@@ -34,7 +35,8 @@ var forceUnwrappedMessage: String = optionalMessage!
 var implicitlyUnwrappingMessage: String! = optionalMessage
 
 
-// Outletの話に戻すと…ビューを生成した直後では、Outletはまだ設定されていません
+// Outletの話に戻すと…
+// ビューを生成した直後では、Outletはまだ設定されていません
 // StoryboardやXIBの設定が反映されるのは、少しあとになります
 
 // 生成直後の一瞬だけ、空のときがあるけれども、
@@ -49,13 +51,13 @@ var implicitlyUnwrappingMesasge2: String! = nil
 // 空にはならないって信じていたのに…なんてことをするんだ！
 
 
-// このあと何か操作を加えようとすると、実行時にエラーが発生して、アプリは強制終了してしまいます
+// このあと何か操作を加えようとすると、実行時にアプリが強制終了してしまいます
 //: - callout(Error): `message.appending("world")`
 //-> error: EXC_BAD_INSTRUCTION
 
 
 // Outletの接続忘れでアプリが落ちるのは、このためです
-// 空ではないと信じているのに、何も接続されていないから、エラーが起きてしまう
+// 空ではないと信じているのに、何も接続されていないから、強制終了してしまう
 
 // 絶対的な信頼を裏切らないようにがんばりましょう
 
@@ -64,7 +66,6 @@ var implicitlyUnwrappingMesasge2: String! = nil
 // どんな型になっているのか、見てみましょう
 type(of: implicitlyUnwrappingMessage)
 // -> ImplicitlyUnwrappedOptional<String>.Type
-
 
 // 何やら長い名前の、新しい型であることがわかります
 // ちなみに、Optionalな変数をforce unwrapしたあとの型は String.Type ですから、これらは別物であることがきちんと確認できますね

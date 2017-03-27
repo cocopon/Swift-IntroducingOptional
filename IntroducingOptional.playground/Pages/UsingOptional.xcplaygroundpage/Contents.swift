@@ -78,7 +78,7 @@ type(of: optionalMessage!.appending("world"))
 
 // 1点注意しなければならないのは、これがとても **危険な操作** だ、ということです
 // 先の例ではたまたま中身が入っていたので成功しましたが、そうでない場合もあるわけです
-// 中身が空っぽなものを無理やりunwrapしようとすると、エラーで強制終了してしまいます
+// 中身が空っぽなものを無理やりunwrapしようとすると、強制終了してしまいます
 // アプリでいうと、実行中に突然アプリが落ちてしまいます
 var emptyMessage: String? = nil
 //: - callout(Error): `emptyMessage!.appending("world")`
