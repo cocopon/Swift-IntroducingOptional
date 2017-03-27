@@ -5,6 +5,7 @@
  - [Optionalってどんなもの？](WhatIsOptional)
  - [Optionalに対する操作](UsingOptional)
  - [Optionalのもう少し高度な操作](AdvancedOptional)
+ - [暗黙的なunwrap](ImplicitlyUnwrapping)
  */
 
 /*

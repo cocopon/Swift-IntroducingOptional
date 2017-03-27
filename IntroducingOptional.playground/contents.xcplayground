@@ -6,5 +6,6 @@
         <page name='WhatIsOptional'/>
         <page name='UsingOptional'/>
         <page name='AdvancedOptional'/>
+        <page name='ImplicitlyUnwrapping'/>
     </pages>
 </playground>
