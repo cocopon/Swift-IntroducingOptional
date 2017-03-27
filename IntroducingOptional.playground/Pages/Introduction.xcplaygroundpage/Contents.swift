@@ -10,11 +10,11 @@
 
 //: ## nilに寛容すぎるObjective-C
 // Objective-Cの世界では、どんなオブジェクトにもnilを入れられました
-//: - example: `NSString *message = nil;`
+//: - example: `NSString *emptyMessage = nil;`
 
 
 // 中身がnilの場合には、何か操作しても何も起こりません
-//: - example: `[message stringByAppendingString:@"world"];`
+//: - example: `[emptyMessage stringByAppendingString:@"world"];`
 // -> (何も起きない)
 
 
@@ -30,7 +30,7 @@
 //: ## nilの対処漏れを言語レベルで防ぐのがOptional
 // 中身が入っていると信じているそのオブジェクトは、本当に空ではないだろうか？
 // 頻繁に起こりうる「nilの対処漏れ」を、言語設計のレベルで助けてくれるのがOptionalです
-// 「!」とか「?」とか、やたらうるさい謎の警告たちは、nilの対処漏れを防ぐため、厳しめに設けられたルールだったのです
+// 「!」をつけなさい、「?」をつけなさいなど、やたらうるさい謎の警告たちは、nilの対処漏れを防ぐために厳しめに設けられたルールだったのです
 
 
 // 次のページから具体的なコードを見ていきましょう

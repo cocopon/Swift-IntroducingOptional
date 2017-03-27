@@ -1,5 +1,5 @@
 /*:
- # ていねいに学ぶOptional
+ # 手を動かしながら、ていねいに学ぶOptional
  ## もくじ
  - [はじめに](Introduction)
  - [Optionalってどんなもの？](WhatIsOptional)
@@ -12,7 +12,7 @@
  cocopon (http://cocopon.me/)
  
  Repository:
- https://github.com/cocopon/IntroducingOptional.playground
+ https://github.com/cocopon/Swift-IntroducingOptional.playground
  
  References:
  - The Swift Programming Language (Swift 3.0.1 Edition)
